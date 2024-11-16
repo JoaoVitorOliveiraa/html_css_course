@@ -1,0 +1,125 @@
+<!--Tópico: Imagens e seus Atributos-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <title>Minha Sexta Página</title>
+  </head>
+  <body>
+    <h1>Imagens e seus Atributos</h1>
+    <hr />
+
+    <h2>Tag IMG</h2>
+    <p>
+      Apresenta na tela do navegador uma imagem, carregada a partir de um
+      arquivo externo ao código HTML.
+    </p>
+    <br />
+
+    <h2>Atributos:</h2>
+
+    <ol>
+      <li>
+        <h3>Src</h3>
+        <ul>
+          <li>
+            O atributo <b>src</b> (source/fonte), representa de onde a imagem é
+            retirada.
+          </li>
+          <li>
+            Pode ser de um arquivo local ou de um hospedado em outro lugar
+            (sites).
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h3>Alt</h3>
+        <ul>
+          <li>
+            O atributo <b>alt</b> (alternative text/texto alternativo), é um
+            texto para quando a imagem não carregar.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h3>Width</h3>
+        <ul>
+          <li>
+            O atributo <b>width</b> determina a largura da imagem, normalmente
+            expressada em pixels (Xpx).
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h3>Height</h3>
+        <ul>
+          <li>
+            O atributo <b>height</b> determina a altura da imagem, normalmente
+            expressada em pixels (Xpx).
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <hr />
+
+    <h2>Tag FIGURE</h2>
+    <p>
+      Especifica conteúdo independente, como ilustrações, diagramas, fotos,
+      listagens de códigos, etc.
+    </p>
+    <p>
+      Embora o conteúdo do elemento esteja relacionado ao fluxo principal, sua
+      posição é independente do fluxo principal e, se removido, não deve afetar
+      o fluxo do documento.
+    </p>
+    <br />
+
+    <h2>Atributos:</h2>
+
+    <ol>
+      <li>
+        <h3>Figcaption</h3>
+        <ul>
+          <li>
+            O atributo <b>figcaption</b> é usado para adicionar uma legenda à
+            imagem.
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <hr />
+
+    <h2>Exemplos:</h2>
+    <ol>
+      <li>
+        <h3>Imagem Local:</h3>
+        <figure>
+          <img src="Mel.png" alt="Imagem da Mel" width="500px" height="" />
+          <figcaption>Imagem da Minha Cachorra Mel</figcaption>
+        </figure>
+      </li>
+      <br />
+      <li>
+        <h3>Imagem Hospedada:</h3>
+        <figure>
+          <img
+            src="https://www.einerd.com.br/wp-content/uploads/2015/12/topo-ei-nerd_logo.png"
+            alt="Logo Ei Nerd"
+            width=""
+            height="150px"
+          />
+          <figcaption>Imagem da Logo do Ei Nerd</figcaption>
+        </figure>
+      </li>
+      <br />
+      <li>
+        <h3>Imagem Quebrada: <img src="" alt="Imagem Quebrada" /></h3>
+      </li>
+    </ol>
+  </body>
+</html>
