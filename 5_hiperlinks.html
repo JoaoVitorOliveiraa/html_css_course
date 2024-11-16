@@ -1,0 +1,126 @@
+<!--Tópico: Hiperlinks-->
+
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Quinta Página</title>
+  </head>
+
+  <body>
+    <h1>Hiperlinks</h1>
+
+    <h2>Tag A</h2>
+    <p>Tag de <b>âncora</b> (anchor) que cria os hiperlinks.</p>
+
+    <br />
+    <h3>Parâmetros/Atributos</h3>
+
+    <h4>Href</h4>
+    <p>
+      O link deve ser colocado dentro da string do parâmetro/atributo
+      <b>href</b>.
+    </p>
+    <p>Ex: <i>href="link"</i></p>
+    <p>
+      Quando não queremos colocar um link (link vazio), é uma boa prática
+      escrever
+      <i>href="#"</i>.
+    </p>
+
+    <h4>Target</h4>
+    <p>
+      Para fazer com que o link seja aberto em outra aba, utiliza-se o
+      parâmetro/atributo <b>target</b>.
+    </p>
+    <p>Ex: <i>target="blank"</i> (abre o link em outra aba)</p>
+    <p>Ex: <i>target="self"</i> (abre o link na mesma aba)</p>
+    <p>
+      OBS: O padrão da tag <b>a</b> sem o parâmetro <b>target</b> é de abrir na
+      mesma aba.
+    </p>
+
+    <h4>ID</h4>
+    <p>
+      Para fazer com que o link te leve para algum lugar da sua página, é
+      necessário colocar o <b>id</b> da tag de destino no parâmetro <b>href</b>.
+    </p>
+    <p>
+      Para adicionar um <b>id</b> a uma tag, basta colocar o parâmetro dentro da
+      tag e dar um nome a ele.
+    </p>
+    <p>Ex: <i>tag id="nome-do-id"</i></p>
+    <p>
+      OBS: No parâmetro <b>href</b>, tem que colocar uma hashtag antes do nome
+      do <b>id</b>, pois é a forma de representar id's.
+    </p>
+    <p>Ex: <i>href="#nome-do-id"</i></p>
+
+    <br />
+    <h3>Exemplos de Aplicação:</h3>
+
+    <p>Tag <b>a</b> sem link de referência:</p>
+    <p><a href="#">Texto dentro da tag A sem nenhum link inserido.</a></p>
+
+    <p>
+      Tag <b>a</b> com link externo de referência (que te leva para outro
+      domínio):
+    </p>
+    <p>
+      <a href="https://github.com/JoaoVitorOliveiraa"
+        >Te leva para a minha conta do Github (Abre na mesma janela).</a
+      >
+    </p>
+
+    <p>
+      Tag <b>a</b> com link externo de referência (que te leva para outro
+      domínio):
+    </p>
+    <p>
+      <a href="https://github.com/JoaoVitorOliveiraa" target="blank"
+        >Te leva para a minha conta do Github (Abre em outra janela).</a
+      >
+    </p>
+
+    <p>
+      Tag <b>a</b> com link interno de referência (que te leva para o mesmo
+      domínio):
+    </p>
+    <p>
+      <a href="#tag-h1"
+        >Te leva para a tag H1 da lista não ordenada abaixo (Abre na mesma
+        janela).</a
+      >
+    </p>
+
+    <p>
+      Tag <b>a</b> com link interno de referência (que te leva para o mesmo
+      domínio):
+    </p>
+    <p>
+      <a href="#tag-h1" target="blank"
+        >Te leva para a tag H1 da lista não ordenada abaixo (Abre em outra
+        janela).</a
+      >
+    </p>
+
+    <br />
+    <h2>Listas Não Ordenadas</h2>
+    <p>Utilizada por meio da tag <b>ul</b> (unordered list).</p>
+    <p>
+      Devemos colocar a tag de item de lista <b>li</b> (list item) dentro da
+      <b>ul</b>, para representar cada item da lista.
+    </p>
+    <p>Ex:</p>
+
+    <ul>
+      <li id="tag-h1">H1</li>
+      <li>H2</li>
+      <li>H3</li>
+      <li>H4</li>
+      <li>H5</li>
+      <li>H6</li>
+    </ul>
+  </body>
+</html>
