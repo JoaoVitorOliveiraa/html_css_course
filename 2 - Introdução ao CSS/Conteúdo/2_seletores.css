@@ -1,0 +1,30 @@
+/* Tópico: Seletores no CSS */
+/* Tipos de Seletores: Tags, IDs e Classes */
+
+/* Tags: Seletores mais gerais */
+p {
+  font-size: 30px;
+  color: red;
+}
+
+/* IDs: Seletores mais específicos */
+/* Só podem haver um ID por elemento */
+#segundo-paragrafo {
+  font-size: 40px;
+  color: purple;
+}
+
+/* Maneira mais eficiente de definir vários IDs ao mesmo tempo */
+/* Porém, a maneira mais eficiente de fazer isso é utilizando Classes */
+#primeiro-p,
+#segundo-p,
+#terceiro-p {
+  font-size: 20px;
+  color: blue;
+}
+
+/* Classes */
+.paragrafo {
+  font-size: 25px;
+  color: chocolate;
+}
