@@ -1,0 +1,32 @@
+/* Tópico: Combinando Seletores */
+
+/* Definição de uma Classe */
+.paragrafo {
+  font-size: 25px;
+  color: chocolate;
+}
+
+/* Estilizando as tags Span */
+span {
+  font-size: 35px;
+  color: blue;
+}
+
+/* Estilizando as tags Span que estão dentro de parágrafos */
+p span {
+  font-size: 20px;
+  color: green;
+}
+
+/* Mesmo resultado, utilizando Classes */
+/* Desta forma, a classe "span-paragrafo" somente pode ser utilizada dentro de uma tag "Span". */
+span.span-paragrafo {
+  font-size: 20px;
+  color: red;
+}
+
+/* Esta classe será utilizada por qualquer elemento que possua a classe e que esteja dentro de uma tag p. */
+p .classe-paragrafo {
+  font-size: 20px;
+  color: rebeccapurple;
+}
