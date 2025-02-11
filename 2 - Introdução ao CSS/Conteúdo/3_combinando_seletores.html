@@ -1,0 +1,38 @@
+<!--Tópico: Combinando Seletores-->
+
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combinando Seletores</title>
+    <link rel="stylesheet" href="3_combinando_seletores.css" />
+  </head>
+  <body>
+    <h1>Combinando Seletores</h1>
+
+    <h2>Tag Span</h2>
+
+    <h3>Estilizando a Tag <span>Span</span> separadamente</h3>
+
+    <p class="paragrafo">
+      Estilizando a Tag <span>Span</span> que está dentro de um parágrafo.
+    </p>
+
+    <p class="paragrafo">
+      Estilizando a Tag <span class="span-paragrafo">Span</span> que está dentro
+      de um parágrafo. Neste parágrafo foi utilizada uma Classe.
+    </p>
+
+    <p class="span-paragrafo">
+      A classe da Tag Span utilizada acima não funciona aqui, pois foi definida
+      para ser usada somente dentro de um span.
+    </p>
+
+    <p>
+      A classe "classe-paragrafo"
+      <b class="classe-paragrafo"> será utilizada por qualquer elemento</b> que
+      possua a classe e que esteja dentro de uma tag <b>p</b>.
+    </p>
+  </body>
+</html>
