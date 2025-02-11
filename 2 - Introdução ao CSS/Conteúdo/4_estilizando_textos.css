@@ -1,0 +1,60 @@
+/* Tópico: Estilizando Textos */
+
+/* Forma mais eficiente de atribuir a fonte */
+h1,
+h2,
+h3,
+p {
+  font-family: "Roboto", sans-serif; /* Letra sem serifa */
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 0.7; /*Valores em porcentagem. 1 = 100%*/
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 0.8;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 0.9;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5; /*Altura da linha. line-height: 1 --> Altura da linha igual ao tamanho do texto */
+}
+
+/* Classe para realçar o texto  */
+.realce {
+  font-style: italic; /*Texto em itálico*/
+  font-weight: bold; /*Texto em negrito. Também utilizam-se os valores 400 (normal), 500, 600 e 700 (negrito)*/
+  color: chocolate;
+}
+
+/* Classe para deixar o texto em caixa alta */
+.caixa-alta {
+  text-transform: uppercase; /*Caixa Alta*/
+  font-weight: 700;
+  font-style: italic;
+  color: tomato;
+}
+
+/* Classe para deixar o texto em caixa baixa */
+.caixa-baixa {
+  text-transform: lowercase; /*Caixa Baixa*/
+  font-weight: 600;
+  font-style: italic;
+  color: blue;
+}
+
+/* Classe para capitalizar o texto */
+.capitalizacao {
+  text-transform: capitalize; /*Capitalização*/
+  font-weight: 500;
+  font-style: italic;
+  color: red;
+}
