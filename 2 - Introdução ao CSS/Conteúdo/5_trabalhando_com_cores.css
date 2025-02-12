@@ -1,0 +1,56 @@
+/* Tópico: Trabalhando com Cores */
+
+h1,
+h2,
+h3,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 0.7;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 0.8;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 0.9;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.cor {
+  color: blue;
+}
+
+.cor-hexa {
+  color: #fe3456; /*Cor em hexadecimal*/
+}
+
+.cor-hexa-dois {
+  color: #44ff66; /*Análogo a escrever '4f6'*/
+}
+
+.cor-hexa-tres {
+  color: #4f6; /*Análogo a escrever '44ff66'*/
+}
+
+.cor-rgb {
+  color: rgb(199, 103, 34); /*Cor em RGB*/
+}
+
+.cor-rgba {
+  color: rgb(45, 123, 205, 0.5); /*Cor em RGBA*/
+}
+
+.cor-rgba-dois {
+  color: rgb(20, 105, 100, 80%);
+}
