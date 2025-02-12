@@ -1,0 +1,50 @@
+/* Tópico: Estilizando Hiperlinks */
+
+h1,
+h2,
+h3,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 0.7;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 0.8;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/*Estilizando pela Tag*/
+a {
+  font-style: italic; /*Deixa o hiperlink em itálico*/
+  text-decoration: none; /*Retira a linha abaixo do hiperlink*/
+}
+
+/*Estilizando pela Classe*/
+.hiperlink {
+  font-style: italic;
+  text-decoration: dashed; /*Linha pontilhada*/
+  text-decoration-line: underline; /*Embaixo do texto*/
+  font-weight: 700; /*Negrito*/
+}
+
+.hiperlink-dois {
+  text-decoration: double; /*Dupla linha*/
+  text-decoration-line: overline; /*Acima do texto*/
+  color: green;
+}
+
+.hiperlink-tres {
+  text-decoration: dotted; /*Linha pontilhada*/
+  text-decoration-line: line-through; /*Através do texto*/
+  text-decoration-color: rgb(230, 30, 100); /*Cor da linha*/
+  color: blueviolet; /*Cor do hiperlink*/
+}
