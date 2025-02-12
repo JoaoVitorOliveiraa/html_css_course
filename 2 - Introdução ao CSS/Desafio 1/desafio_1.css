@@ -78,12 +78,10 @@ Você pode trocar os códigos em HTML, só lembre de não perder a parte semânt
 
 /* Os dois realces da seção de Condições deverão estar na cor #0588c4 e o realce do frete grátis
  deverá adicionar um sublinhado também. Lembre de não perder a parte semântica do HTML aqui também.*/
-
 .realce-italico {
   font-style: italic;
 }
 
 .realce-frete {
   text-decoration: underline;
-  text-decoration-line: underline;
 }
