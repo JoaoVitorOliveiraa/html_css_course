@@ -65,7 +65,7 @@ li {
 /* Os dois realces que fizemos na seção de Preço deverão ter a cor #0588c4. 
 (Existem várias formas certas de fazer isso). 
 Você pode trocar os códigos em HTML, só lembre de não perder a parte semântica do que tínhamos construído. */
-.realce,
+.realce-h1,
 .realce-frete {
   color: #0588c4;
 }
