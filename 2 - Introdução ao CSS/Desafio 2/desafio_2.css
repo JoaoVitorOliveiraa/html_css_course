@@ -11,6 +11,7 @@ p,
 li,
 a {
   font-family: "Montserrat", sans-serif;
+  color: #404040;
 }
 
 /* Cabeçalho */
@@ -25,7 +26,6 @@ a {
 
 /* Seção Hero */
 h1 {
-  color: #404040;
-  font-size: 33.2px;
+  font-size: 35px;
   font-weight: 600;
 }
