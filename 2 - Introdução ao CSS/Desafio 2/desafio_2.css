@@ -167,3 +167,23 @@ strong {
 /* Seção Minicurso */
 /* Além da criação da classe global "realce-semibold", 
 não há nada para ser feito nesse momento. */
+
+/* Seção Rodapé */
+.rodape-titulo {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.rodape-subtitulo {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.rodape-seg-subtitulo {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.rodape-link {
+  color: #1a77a4;
+}
