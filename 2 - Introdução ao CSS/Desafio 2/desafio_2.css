@@ -1,1 +1,11 @@
 /* Código do Desafio 2 */
+
+/* Classe para os itens de lista do Cabeçalho */
+.item-lista-cabecalho a {
+  color: #112e61;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
