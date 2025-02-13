@@ -32,6 +32,12 @@ strong {
   font-weight: 600;
 }
 
+.botao {
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 /* Cabeçalho */
 /* Classe para os itens de lista do Cabeçalho */
 .item-lista-cabecalho a {
@@ -47,11 +53,11 @@ strong {
   font-size: 19px;
 }
 
-.hero-botao {
+/* .hero-botao {
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
-}
+} */
 
 /* Seção Conteúdos Gratuitos */
 /* .gratuito-h2 {
@@ -103,4 +109,9 @@ strong {
   color: #005e88;
   font-weight: 700;
   text-decoration: none;
+}
+
+/* Seção O que falam */
+.oquefalam-realce {
+  font-weight: 600;
 }
