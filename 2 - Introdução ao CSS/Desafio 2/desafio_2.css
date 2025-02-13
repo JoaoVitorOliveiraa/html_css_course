@@ -1,11 +1,31 @@
 /* Código do Desafio 2 */
 
+/* Definindo uma fonte geral */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Cabeçalho */
 /* Classe para os itens de lista do Cabeçalho */
 .item-lista-cabecalho a {
   color: #112e61;
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+/* Seção Hero */
+h1 {
+  color: #404040;
+  font-size: 33.2px;
+  font-weight: 600;
 }
