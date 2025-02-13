@@ -118,3 +118,24 @@ strong {
 
 /* Seção Na mídia */
 /* Não há nada para ser feito nesse momento. */
+
+/* Seção Blog da Hashtag */
+.blog-postadoem {
+  font-size: 15px;
+}
+
+.blog-postadoem a {
+  color: #f7a70c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-titulopost {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.descricao-post {
+  font-size: 17px;
+}
