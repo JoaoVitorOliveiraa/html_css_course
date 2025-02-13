@@ -38,6 +38,10 @@ strong {
   text-decoration: none;
 }
 
+.realce-semibold {
+  font-weight: 600;
+}
+
 /* Cabeçalho */
 /* Classe para os itens de lista do Cabeçalho */
 .item-lista-cabecalho a {
@@ -112,9 +116,9 @@ strong {
 }
 
 /* Seção O que falam */
-.oquefalam-realce {
+/* .oquefalam-realce {
   font-weight: 600;
-}
+} */
 
 /* Seção Na mídia */
 /* Não há nada para ser feito nesse momento. */
@@ -141,9 +145,9 @@ strong {
 }
 
 /* Seção Como ajudar */
-.comoajudar-realce {
+/* .comoajudar-realce {
   font-weight: 600;
-}
+} */
 
 .comoajudar-lista,
 .comoajudar-paragrafo {
@@ -159,3 +163,7 @@ strong {
 .comoajudar-paragrafo b {
   font-weight: 600;
 }
+
+/* Seção Minicurso */
+/* Além da criação da classe global "realce-semibold", 
+não há nada para ser feito nesse momento. */
