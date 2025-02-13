@@ -1,6 +1,6 @@
 /* Código do Desafio 2 */
 
-/* Definindo uma fonte geral */
+/* Global */
 h1,
 h2,
 h3,
@@ -14,6 +14,24 @@ a {
   color: #404040;
 }
 
+h1 {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+}
+
+strong {
+  font-weight: 600;
+}
+
 /* Cabeçalho */
 /* Classe para os itens de lista do Cabeçalho */
 .item-lista-cabecalho a {
@@ -25,11 +43,6 @@ a {
 }
 
 /* Seção Hero */
-h1 {
-  font-size: 35px;
-  font-weight: 600;
-}
-
 .hero-paragrafo {
   font-size: 19px;
 }
@@ -41,10 +54,10 @@ h1 {
 }
 
 /* Seção Conteúdos Gratuitos */
-.gratuito-h2 {
+/* .gratuito-h2 {
   font-size: 35px;
   font-weight: 400;
-}
+} */
 
 .gratuito-realce {
   color: #7a40be;
@@ -58,5 +71,36 @@ h1 {
 
 .gratuito-lista a {
   font-size: 19px;
+  text-decoration: none;
+}
+
+/* Seção Diferenciais */
+/* .diferenciais-h2 {
+  font-size: 35px;
+  font-weight: 400;
+} */
+
+/* .diferenciais-h2 strong {
+  font-weight: 600;
+} */
+
+.diferenciais-p {
+  font-size: 19px;
+}
+
+.diferenciais-h3 {
+  color: #005e88;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.diferenciais-h3-empresas {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.diferenciais-h3-empresas a {
+  color: #005e88;
+  font-weight: 700;
   text-decoration: none;
 }
