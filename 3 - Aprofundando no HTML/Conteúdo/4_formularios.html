@@ -1,0 +1,94 @@
+<!--Tópico: Formulários-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulários</title>
+  </head>
+  <body>
+    <main>
+      <h1>Formulários</h1>
+      <hr />
+
+      <h2>Tag form</h2>
+      <p>
+        A tag <b>form</b> em HTML é usada para criar formulários interativos que
+        permitem ao usuário inserir e enviar dados para um servidor. Ela pode
+        conter diversos elementos de entrada, como <b>input</b>,
+        <b>textarea</b>, <b>select</b>, <b>button</b>, entre outros.
+      </p>
+
+      <p>Principais atributos da <b>form</b>:</p>
+      <ul>
+        <li><b>action</b>: Define o destino do envio dos dados.</li>
+        <li><b>method</b>: Define o método HTTP (GET ou POST).</li>
+        <li>
+          <b>enctype</b>: Usado em uploads de arquivos (multipart/form-data).
+        </li>
+        <li><b>autocomplete</b>: Ativa/desativa preenchimento automático.</li>
+        <li>
+          <b>novalidate</b>: Desativa a validação do formulário pelo navegador.
+        </li>
+      </ul>
+
+      <h2>Tag label</h2>
+      <p>
+        A tag <b>label</b> em HTML é usada para definir rótulos (labels) para
+        elementos de formulário, como caixas de texto, botões de rádio,
+        checkboxes, entre outros. Ela ajuda a associar um texto descritivo a um
+        campo de entrada, melhorando a acessibilidade e a usabilidade do
+        formulário.
+      </p>
+
+      <h2>Tag input</h2>
+      <p>
+        A tag <b>input</b> em HTML é um dos elementos mais usados em formulários
+        para receber dados dos usuários. Ela pode ser configurada com diferentes
+        tipos, como texto, senha, e-mail, data, entre outros, através do
+        atributo type. Além disso, o <b>input</b> pode ser combinado com outros
+        atributos para personalizar o comportamento de cada campo.
+      </p>
+
+      <h2>Tag button</h2>
+      <p>
+        A tag <b>button</b> em HTML é usada para criar botões interativos. Eles
+        podem ser usados para enviar formulários, disparar ações via JavaScript,
+        ou até mesmo para interagir com o usuário de diversas formas. O
+        <b>button</b> é muito mais flexível do que outras tags de botão, como o
+        <b>input type="submit"</b>, permitindo incluir HTML dentro dele, como
+        texto, imagens ou ícones.
+      </p>
+
+      <br />
+      <section>
+        <h2>Newsletter</h2>
+
+        <form action="" method="">
+          <div>
+            <label for="name">Nome</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Seu primeiro nome"
+            />
+          </div>
+
+          <div>
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Seu melhor e-mail"
+            />
+          </div>
+
+          <button type="submit">Enviar!</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
