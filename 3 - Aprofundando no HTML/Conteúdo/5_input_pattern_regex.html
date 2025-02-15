@@ -1,0 +1,79 @@
+<!--Tópico: Input Pattern + Regex-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Pattern + Regex</title>
+  </head>
+  <body>
+    <main>
+      <h1>Input Pattern + Regex</h1>
+      <hr />
+
+      <p>
+        O atributo pattern no <b>input</b> permite definir regras de validação
+        usando <b>expressões regulares (Regex)</b>. Isso garante que os usuários
+        insiram dados no formato correto antes de enviar um formulário.
+      </p>
+      <p>
+        O atributo <b>required</b> em HTML é usado para tornar um campo
+        obrigatório dentro de um formulário. Se um usuário tentar enviar o
+        formulário sem preencher um campo marcado como required, o navegador
+        impedirá o envio e exibirá uma mensagem de erro.
+      </p>
+      <p>
+        O atributo title no <b>input</b> é usado para fornecer uma dica ou
+        mensagem adicional ao usuário. Ele é especialmente útil quando combinado
+        com validações (<b>required</b>, <b>pattern</b>, <b>maxlength</b>,
+        etc.), pois o navegador exibe essa mensagem caso o usuário insira um
+        valor inválido.
+      </p>
+
+      <br />
+      <section>
+        <h2>Newsletter</h2>
+
+        <form action="" method="">
+          <div>
+            <label for="name">Nome (Apenas letras)</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              pattern="[a-zA-Z]+"
+              title="Esse input só aceita letras, não aceita números."
+              placeholder="Seu primeiro nome"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Seu melhor e-mail"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="phone">Telefone</label>
+            <input
+              id="phone"
+              name="phone"
+              type="number"
+              placeholder="Seu telefone"
+              required
+            />
+          </div>
+
+          <button type="submit">Enviar!</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
