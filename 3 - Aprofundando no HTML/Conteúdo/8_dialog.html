@@ -11,6 +11,46 @@
     <main>
       <h1>Dialog</h1>
       <hr />
+
+      <h2>Tag dialog</h2>
+      <p>
+        A tag <b>dialog</b> cria caixas de diálogo ou modais nativos no HTML,
+        podendo ser abertas e fechadas via JavaScript. Principais
+        atributos/métodos: <b>open</b> (exibe o diálogo), <b>showModal</b>()
+        (abre como modal), <b>show</b>() (abre sem modal), <b>close</b>() (fecha
+        o diálogo).
+      </p>
+      <br />
+
+      <button class="js-abrir">Abrir</button>
+      <dialog>
+        <p>
+          Etiam nec tempor nibh. Pellentesque porta felis quis hendrerit semper.
+          Nunc odio metus, feugiat sit amet ultricies sagittis, luctus non erat.
+          Aliquam ornare nibh ut dolor blandit gravida. Maecenas tristique metus
+          consequat tortor bibendum auctor. Mauris eu pellentesque est, at
+          rutrum tellus. Mauris ac metus vel nibh pretium pretium. Nunc sit amet
+          condimentum sem. Aenean aliquet sed velit eget interdum. Etiam luctus
+          massa tellus, vulputate vehicula leo ornare et. Ut finibus fermentum
+          nibh, ac malesuada lectus egestas et. Integer nec elit leo. Duis in
+          elementum ante, eget ultricies sem. Sed euismod ullamcorper interdum.
+          Proin quis pellentesque felis. Fusce id gravida dui.
+        </p>
+        <button class="js-fechar">Fechar</button>
+      </dialog>
+
+      <script>
+        let elemBotaoAbrir = document.querySelector(".js-abrir");
+        let elemBotaoFechar = document.querySelector(".js-fechar");
+        let elemDialog = document.querySelector("dialog");
+
+        elemBotaoAbrir.addEventListener("click", () => {
+          elemDialog.showModal();
+        });
+        elemBotaoFechar.addEventListener("click", () => {
+          elemDialog.close();
+        });
+      </script>
     </main>
   </body>
 </html>
