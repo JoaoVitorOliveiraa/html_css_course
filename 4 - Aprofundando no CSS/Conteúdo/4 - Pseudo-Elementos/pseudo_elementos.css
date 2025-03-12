@@ -1,0 +1,16 @@
+p::after {
+  content: "Texto que entrará no final.";
+}
+
+p::before {
+  content: "Texto que entrará no início.";
+}
+
+p::first-letter {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+p::first-line {
+  color: red;
+}
