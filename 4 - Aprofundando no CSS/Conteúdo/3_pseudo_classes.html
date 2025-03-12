@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Classes</title>
+  </head>
+  <body>
+    <h1>Pseudo-Classes</h1>
+    <hr />
+
+    <span>
+      Pseudo-classes no CSS são palavras-chave que definem um estado especial de
+      um elemento, permitindo estilização baseada em interações ou estrutura.
+    </span>
+
+    <h2>Sintaxe:</h2>
+    <pre><code>seletor:pseudo-classe {
+        propriedade: valor;
+    }
+    </code></pre>
+
+    <h2>Principais Pseudo-Classes:</h2>
+
+    <h3>Interação:</h3>
+    <ul>
+      <li>:hover → Quando o usuário passa o mouse.</li>
+      <li>:focus → Quando um campo recebe foco.</li>
+      <li>:active → Quando um elemento é clicado.</li>
+    </ul>
+
+    <h3>Estados de formulário:</h3>
+    <ul>
+      <li>:checked → Quando um checkbox está marcado.</li>
+      <li>:disabled → Quando um campo está desativado.</li>
+      <li>:required → Quando um campo é obrigatório.</li>
+    </ul>
+
+    <h3>Estrutura:</h3>
+    <ul>
+      <li>:first-child → Primeiro filho de um elemento pai.</li>
+      <li>:last-child → Último filho de um elemento pai.</li>
+      <li>:nth-child(odd/even/n) → Seleciona filhos específicos.</li>
+    </ul>
+
+    <style>
+      /* LVHA */
+      /* link, visited, hover, active */
+      /* Temos que utilizar todas essas pseudo-classes quando adicionarmos um link em uma página. */
+
+      /* Vai formatar apenas as âncoras que possuírem um link. */
+      a:link,
+      a:visited {
+        color: green;
+      }
+
+      a:hover,
+      a:active {
+        font-weight: 700;
+      }
+
+      a:active {
+        color: orange;
+      }
+
+      p:hover {
+        color: red;
+        font-size: 32px;
+      }
+    </style>
+
+    <br />
+    <p>PASSE O MOUSE EM CIMA DESSE PARÁGRAFO</p>
+
+    <br />
+    <a href="https://www.google.com">Minha âncora</a>
+  </body>
+</html>
