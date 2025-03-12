@@ -1,0 +1,40 @@
+/* Seletor Universal */
+* {
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Monserrat", sans-serif;
+  color: #333;
+}
+
+h1 {
+  color: blue;
+  margin-bottom: 4rem;
+  font-size: 5rem;
+}
+
+h2 {
+  margin-bottom: 3rem;
+  font-size: 4rem;
+}
+
+h3 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+pre {
+  font-size: 2rem;
+}
