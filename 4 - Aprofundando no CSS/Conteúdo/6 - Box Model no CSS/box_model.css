@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  /* content-box: Padrão do CSS, útil para textos ou elementos sem restrição de tamanho. */
+  /* border-box: Padrão do CSS, útil para textos ou elementos sem restrição de tamanho. */
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+div {
+  border: solid 16px black;
+  padding: 1rem;
+  height: 20rem;
+}
