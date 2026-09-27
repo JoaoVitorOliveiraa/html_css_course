@@ -3,7 +3,7 @@
   padding: 0;
 
   /* content-box: Padrão do CSS, útil para textos ou elementos sem restrição de tamanho. */
-  /* border-box: Padrão do CSS, útil para textos ou elementos sem restrição de tamanho. */
+  /* border-box: Unifica o cálculo do tamanho do elemento (padding + borda + conteúdo) */
   box-sizing: border-box;
 }
 
