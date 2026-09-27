@@ -1,0 +1,272 @@
+<!--Tópico: Unidades de Viewport Dinâmicas (dvh, lvh, svh)-->
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidades de Viewport: dvh, lvh e svh</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="4_unidades_viewport.css" />
+  </head>
+
+  <body>
+    <main class="wrap">
+      <!-- ===== CABEÇALHO ===== -->
+      <span class="pill"
+        >CSS • <code>dvh</code> <code>lvh</code> <code>svh</code></span
+      >
+
+      <h1>
+        Unidades de Viewport Dinâmicas:
+        <code>dvh</code>, <code>lvh</code> e <code>svh</code>
+      </h1>
+
+      <p class="sub">
+        As unidades <code>vh</code> tradicionais sempre causaram problemas em
+        dispositivos móveis por causa das barras de navegação que aparecem e
+        desaparecem. As novas unidades <code>dvh</code>, <code>lvh</code> e
+        <code>svh</code> resolvem isso de forma elegante.
+      </p>
+
+      <!-- ===== SEÇÃO 1: O PROBLEMA ===== -->
+      <section class="section">
+        <h2>1. O problema com <code>vh</code></h2>
+        <p class="sub">
+          Em navegadores móveis, a barra de endereço e a barra de ferramentas
+          aparecem e desaparecem conforme o usuário rola a página. Isso faz com
+          que a altura real do viewport mude constantemente. O
+          <code>100vh</code> tradicional sempre usa o <em>maior</em> valor
+          possível, o que pode causar overflow ou cortes no conteúdo.
+        </p>
+
+        <div class="card">
+          <h3>Exemplo: <code>height: 100vh</code></h3>
+          <p class="note">
+            Em um celular, este elemento pode ultrapassar a área visível quando
+            a barra de endereço está aberta, criando barras de rolagem
+            indesejadas.
+          </p>
+          <div class="demo-box demo-vh">
+            <span>100vh</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 2: AS TRÊS UNIDADES ===== -->
+      <section class="section">
+        <h2>2. As três novas unidades</h2>
+        <p class="sub">
+          Cada uma representa um momento diferente do viewport móvel:
+        </p>
+
+        <div class="grid-tres">
+          <!-- dvh -->
+          <div class="card">
+            <h3><code>dvh</code></h3>
+            <p class="sub-small">
+              <strong>Dynamic viewport height</strong> — altura
+              <em>dinâmica</em>. Muda em tempo real conforme as barras do
+              navegador aparecem ou desaparecem.
+            </p>
+            <div class="demo-box demo-dvh">
+              <span>100dvh</span>
+            </div>
+          </div>
+
+          <!-- lvh -->
+          <div class="card">
+            <h3><code>lvh</code></h3>
+            <p class="sub-small">
+              <strong>Large viewport height</strong> — altura <em>máxima</em>.
+              Usa o viewport quando as barras do navegador estão
+              <em>ocultas</em> (maior área possível).
+            </p>
+            <div class="demo-box demo-lvh">
+              <span>100lvh</span>
+            </div>
+          </div>
+
+          <!-- svh -->
+          <div class="card">
+            <h3><code>svh</code></h3>
+            <p class="sub-small">
+              <strong>Small viewport height</strong> — altura <em>mínima</em>.
+              Usa o viewport quando as barras do navegador estão
+              <em>visíveis</em> (menor área possível).
+            </p>
+            <div class="demo-box demo-svh">
+              <span>100svh</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 3: COMPARAÇÃO VISUAL ===== -->
+      <section class="section">
+        <h2>3. Comparação visual</h2>
+        <p class="sub">
+          Imagine um celular onde a barra de endereço ocupa 80px. Veja como cada
+          unidade se comporta:
+        </p>
+
+        <div class="card">
+          <div class="comparacao">
+            <div class="comp-item">
+              <div class="comp-barra comp-barra-lvh">
+                <span class="comp-label">lvh</span>
+                <div class="comp-preenchimento comp-preenchimento-lvh"></div>
+              </div>
+              <p class="comp-desc">
+                <strong>Maior</strong><br />
+                Barras ocultas
+              </p>
+            </div>
+
+            <div class="comp-item">
+              <div class="comp-barra comp-barra-dvh">
+                <span class="comp-label">dvh</span>
+                <div class="comp-preenchimento comp-preenchimento-dvh"></div>
+              </div>
+              <p class="comp-desc">
+                <strong>Dinâmico</strong><br />
+                Muda em tempo real
+              </p>
+            </div>
+
+            <div class="comp-item">
+              <div class="comp-barra comp-barra-svh">
+                <span class="comp-label">svh</span>
+                <div class="comp-preenchimento comp-preenchimento-svh"></div>
+              </div>
+              <p class="comp-desc">
+                <strong>Menor</strong><br />
+                Barras visíveis
+              </p>
+            </div>
+          </div>
+
+          <p class="note">
+            <strong>Relação:</strong> <code>svh ≤ dvh ≤ lvh</code>. O
+            <code>dvh</code> sempre fica entre os dois extremos e se ajusta
+            conforme o usuário interage com a página.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 4: QUANDO USAR CADA UMA ===== -->
+      <section class="section">
+        <h2>4. Quando usar cada unidade</h2>
+
+        <div class="grid-tres">
+          <div class="card uso-card">
+            <div class="uso-header uso-dvh">
+              <code>dvh</code>
+            </div>
+            <ul class="lista-uso">
+              <li>Hero sections que ocupam a tela toda</li>
+              <li>Modais e overlays em tela cheia</li>
+              <li>
+                Quando você quer que o conteúdo se ajuste em tempo real sem
+                cortes
+              </li>
+            </ul>
+          </div>
+
+          <div class="card uso-card">
+            <div class="uso-header uso-lvh">
+              <code>lvh</code>
+            </div>
+            <ul class="lista-uso">
+              <li>Elementos que devem ocupar a maior área possível</li>
+              <li>Backgrounds fixos que não devem "pular"</li>
+              <li>
+                Quando você quer garantir que o conteúdo caiba mesmo com barras
+                ocultas
+              </li>
+            </ul>
+          </div>
+
+          <div class="card uso-card">
+            <div class="uso-header uso-svh">
+              <code>svh</code>
+            </div>
+            <ul class="lista-uso">
+              <li>Conteúdo que nunca deve ser cortado</li>
+              <li>Layouts críticos de acessibilidade</li>
+              <li>
+                Quando você quer o pior cenário (barras visíveis) como
+                referência
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 5: CÓDIGO ===== -->
+      <section class="section">
+        <h2>5. Exemplo de código</h2>
+
+        <div class="card">
+          <pre
+            class="code-block"
+          ><code>/* Hero que ocupa exatamente o viewport visível */
+.hero {
+  height: 100dvh;
+}
+
+/* Background que nunca "pula" ao rolar */
+.background {
+  min-height: 100lvh;
+}
+
+/* Container que nunca é cortado */
+.container-seguro {
+  max-height: 100svh;
+  overflow-y: auto;
+}</code></pre>
+
+          <p class="note">
+            Todas as três unidades também existem na versão horizontal:
+            <code>dvw</code>, <code>lvw</code> e <code>svw</code>. E há ainda as
+            versões para os eixos menores/maiores:
+            <code>dvmin</code>/<code>dvmax</code>, etc.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 6: SUPORTE ===== -->
+      <section class="section">
+        <h2>6. Suporte dos navegadores</h2>
+        <div class="card">
+          <ul class="lista-suporte">
+            <li><strong>Chrome/Edge:</strong> 108+</li>
+            <li><strong>Firefox:</strong> 101+</li>
+            <li><strong>Safari:</strong> 15.4+</li>
+            <li>
+              <strong>Fallback:</strong> use <code>100vh</code> antes da unidade
+              nova. Navegadores antigos ignoram a linha que não entendem.
+            </li>
+          </ul>
+
+          <pre class="code-block"><code>.hero {
+  height: 100vh;   /* fallback para navegadores antigos */
+  height: 100dvh;  /* navegadores modernos usam esta */
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- ===== RODAPÉ ===== -->
+      <footer class="footer">
+        <p>
+          Material explicativo sobre unidades de viewport dinâmicas —
+          <code>dvh</code>, <code>lvh</code> e <code>svh</code>.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
