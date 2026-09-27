@@ -1,0 +1,312 @@
+/* Tópico: O Elemento <selectedcontent> */
+/* Este arquivo estiliza o material explicativo e demonstra */
+/* como estilizar o próprio <selectedcontent> e o <select> moderno. */
+
+/* ===== RESET E BASE ===== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(1200px 600px at 0% 0%, #121d46 0, #0b1020 55%),
+    radial-gradient(900px 400px at 100% 100%, #0e1536 0, transparent 60%);
+  color: #eaf0ff;
+  font:
+    500 16px/1.45 Inter,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial;
+  padding: 40px 0;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.wrap {
+  width: min(980px, 92vw);
+  display: grid;
+  gap: 28px;
+}
+
+/* ===== CABEÇALHO ===== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0b1438;
+  border: 1px solid #24306c;
+  color: #cfe0ff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  width: max-content;
+}
+
+.pill code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700;
+  color: #ffe082;
+}
+
+h1 {
+  font-size: clamp(24px, 3.2vw, 42px);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.2;
+  color: #cfe0ff;
+}
+
+h3 {
+  font-size: 16px;
+  color: #9db6ff;
+  margin-bottom: 12px;
+}
+
+.sub {
+  color: #a9b4d6;
+  max-width: 70ch;
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+  display: grid;
+  gap: 14px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: linear-gradient(180deg, #0f1836, #111d47);
+  border: 1px solid #24316b;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== FORMULÁRIO ===== */
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* ===== SELECT TRADICIONAL ===== */
+/* Este select NÃO usa appearance: base-select, então se comporta */
+/* como um select nativo comum. */
+.select-tradicional {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #24316b;
+  background: #0c1639;
+  color: #eaf0ff;
+  font: inherit;
+  outline: none;
+  min-width: 260px;
+  width: max-content;
+}
+
+/* ===== SELECT MODERNO ===== */
+/* O segredo está em appearance: base-select, que habilita */
+/* o novo comportamento com <button> e <selectedcontent>. */
+select {
+  appearance: none;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #24316b;
+  background: #0c1639;
+  color: #eaf0ff;
+  font: inherit;
+  outline: none;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+  min-width: 260px;
+  width: max-content;
+  background-position:
+    right 14px center,
+    right 8px center;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+}
+
+select:focus {
+  border-color: #8ab4ff;
+  box-shadow: 0 0 0 4px rgba(138, 180, 255, 0.15);
+}
+
+/* ===== HABILITANDO O NOVO COMPORTAMENTO ===== */
+/* Tanto o select quanto o picker precisam de appearance: base-select */
+/* para que o <selectedcontent> funcione corretamente. */
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+/* ===== ESTILIZAÇÃO DAS OPÇÕES ===== */
+option {
+  padding: 5px;
+}
+
+/* Remove o checkmark padrão do navegador */
+option::checkmark {
+  display: none;
+}
+
+/* Destaca a opção atualmente selecionada */
+option:checked {
+  background-color: #ffd166;
+}
+
+/* ===== O ELEMENTO <selectedcontent> ===== */
+/* Este é o coração do tópico. O <selectedcontent> espelha o HTML */
+/* da opção selecionada dentro do botão do select. */
+selectedcontent {
+  display: grid;
+  gap: 6px;
+  background: #0a1433;
+  border: 1px solid #22306a;
+  border-radius: 12px;
+  padding: 14px;
+  min-height: 56px;
+}
+
+/* ===== LINHA DE CONTEÚDO (BADGE + TEXTO) ===== */
+.row {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 8px;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+/* ===== BADGES COLORIDOS ===== */
+.badge {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-weight: 800;
+  color: #0b1020;
+}
+
+.b1 {
+  background: #7ee8fa;
+}
+
+.b2 {
+  background: #ffd166;
+}
+
+.b3 {
+  background: #88ff9b;
+}
+
+.b4 {
+  background: #9db6ff;
+}
+
+/* ===== LISTAS ===== */
+.lista-estrutura,
+.lista-suporte {
+  display: grid;
+  gap: 12px;
+  padding-left: 20px;
+  color: #cfe0ff;
+}
+
+.lista-estrutura li,
+.lista-suporte li {
+  line-height: 1.5;
+}
+
+.lista-estrutura code,
+.lista-suporte code {
+  background: #0a1433;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #ffe082;
+}
+
+/* ===== BLOCOS DE CÓDIGO ===== */
+.code-block {
+  background: #0a1433;
+  border: 1px solid #22306a;
+  border-radius: 12px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.code-block code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #cfe0ff;
+  white-space: pre;
+}
+
+/* ===== NOTAS EXPLICATIVAS ===== */
+.note {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #0a1433;
+  border-left: 3px solid #8ab4ff;
+  border-radius: 0 8px 8px 0;
+  color: #a9b4d6;
+  font-size: 14px;
+}
+
+/* ===== RODAPÉ ===== */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #6b7a9e;
+  font-size: 14px;
+  border-top: 1px solid #1a2550;
+}
+
+.footer code {
+  background: #0a1433;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #ffe082;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 640px) {
+  .wrap {
+    width: 94vw;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  select,
+  .select-tradicional {
+    min-width: 100%;
+    width: 100%;
+  }
+}
