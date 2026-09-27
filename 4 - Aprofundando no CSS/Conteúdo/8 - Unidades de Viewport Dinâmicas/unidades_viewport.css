@@ -1,0 +1,388 @@
+/* Tópico: Unidades de Viewport Dinâmicas (dvh, lvh, svh) */
+/* Este arquivo estiliza o material explicativo e demonstra */
+/* visualmente a diferença entre as três unidades. */
+
+/* ===== RESET E BASE ===== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100svh; /* usando svh para garantir que o body nunca seja cortado */
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(1200px 600px at 0% 0%, #121d46 0, #0b1020 55%),
+    radial-gradient(900px 400px at 100% 100%, #0e1536 0, transparent 60%);
+  color: #eaf0ff;
+  font:
+    500 16px/1.45 Inter,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial;
+  padding: 40px 0;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.wrap {
+  width: min(980px, 92vw);
+  display: grid;
+  gap: 28px;
+}
+
+/* ===== CABEÇALHO ===== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0b1438;
+  border: 1px solid #24306c;
+  color: #cfe0ff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  width: max-content;
+  flex-wrap: wrap;
+}
+
+.pill code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700;
+  color: #ffe082;
+}
+
+h1 {
+  font-size: clamp(24px, 3.2vw, 42px);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.2;
+  color: #cfe0ff;
+}
+
+h3 {
+  font-size: 16px;
+  color: #9db6ff;
+  margin-bottom: 12px;
+}
+
+h3 code,
+h2 code,
+h1 code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #ffe082;
+  font-size: 0.9em;
+}
+
+.sub {
+  color: #a9b4d6;
+  max-width: 70ch;
+}
+
+.sub-small {
+  color: #a9b4d6;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+  display: grid;
+  gap: 14px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: linear-gradient(180deg, #0f1836, #111d47);
+  border: 1px solid #24316b;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== GRID DE TRÊS COLUNAS ===== */
+.grid-tres {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 780px) {
+  .grid-tres {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== CAIXAS DE DEMONSTRAÇÃO ===== */
+/* Cada caixa tem uma altura fixa em pixels para caber no layout, */
+/* mas a ideia é mostrar como cada unidade se comporta em um */
+/* dispositivo real. */
+.demo-box {
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0b1020;
+  min-height: 120px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Representação visual das três unidades */
+.demo-vh {
+  background: linear-gradient(180deg, #ff6b6b, #c92a2a);
+  color: #fff;
+  height: 200px;
+}
+
+.demo-dvh {
+  background: linear-gradient(180deg, #ffd166, #f0a500);
+}
+
+.demo-lvh {
+  background: linear-gradient(180deg, #7ee8fa, #2b8a9e);
+}
+
+.demo-svh {
+  background: linear-gradient(180deg, #88ff9b, #2f9e44);
+}
+
+/* ===== COMPARAÇÃO VISUAL ===== */
+.comparacao {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: end;
+  padding: 20px 0;
+}
+
+@media (max-width: 640px) {
+  .comparacao {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.comp-item {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.comp-barra {
+  width: 60px;
+  height: 220px;
+  background: #0a1433;
+  border: 2px solid #24316b;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.comp-label {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  color: #cfe0ff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  z-index: 2;
+}
+
+.comp-preenchimento {
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+}
+
+/* lvh: maior altura (representa barras ocultas) */
+.comp-preenchimento-lvh {
+  height: 90%;
+  background: linear-gradient(180deg, #7ee8fa, #2b8a9e);
+}
+
+/* dvh: altura dinâmica (intermediária) */
+.comp-preenchimento-dvh {
+  height: 75%;
+  background: linear-gradient(180deg, #ffd166, #f0a500);
+  transition: height 0.3s ease;
+}
+
+/* svh: menor altura (representa barras visíveis) */
+.comp-preenchimento-svh {
+  height: 60%;
+  background: linear-gradient(180deg, #88ff9b, #2f9e44);
+}
+
+.comp-desc {
+  text-align: center;
+  font-size: 13px;
+  color: #a9b4d6;
+  line-height: 1.4;
+}
+
+.comp-desc strong {
+  color: #cfe0ff;
+}
+
+/* ===== CARDS DE USO ===== */
+.uso-card {
+  display: grid;
+  gap: 12px;
+}
+
+.uso-header {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+}
+
+.uso-dvh {
+  background: linear-gradient(180deg, #ffd166, #f0a500);
+  color: #0b1020;
+}
+
+.uso-lvh {
+  background: linear-gradient(180deg, #7ee8fa, #2b8a9e);
+  color: #0b1020;
+}
+
+.uso-svh {
+  background: linear-gradient(180deg, #88ff9b, #2f9e44);
+  color: #0b1020;
+}
+
+.lista-uso {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+  color: #cfe0ff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== LISTAS GERAIS ===== */
+.lista-suporte {
+  display: grid;
+  gap: 10px;
+  padding-left: 20px;
+  color: #cfe0ff;
+  margin-bottom: 16px;
+}
+
+.lista-suporte li {
+  line-height: 1.5;
+}
+
+.lista-suporte code {
+  background: #0a1433;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #ffe082;
+}
+
+/* ===== BLOCOS DE CÓDIGO ===== */
+.code-block {
+  background: #0a1433;
+  border: 1px solid #22306a;
+  border-radius: 12px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.code-block code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #cfe0ff;
+  white-space: pre;
+}
+
+/* ===== NOTAS EXPLICATIVAS ===== */
+.note {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #0a1433;
+  border-left: 3px solid #8ab4ff;
+  border-radius: 0 8px 8px 0;
+  color: #a9b4d6;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.note code {
+  background: #0f1836;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #ffe082;
+}
+
+/* ===== RODAPÉ ===== */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #6b7a9e;
+  font-size: 14px;
+  border-top: 1px solid #1a2550;
+}
+
+.footer code {
+  background: #0a1433;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #ffe082;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 640px) {
+  .wrap {
+    width: 94vw;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
+
+/* ===== DEMONSTRAÇÃO REAL DAS UNIDADES ===== */
+/* Aqui está o pulo do gato: se você abrir este arquivo em um */
+/* celular e rolar a página, verá a barra de endereço aparecer */
+/* e desaparecer. O elemento abaixo usa 100dvh de verdade, então */
+/* sua altura muda em tempo real. */
+.hero-real {
+  height: 100dvh; /* muda dinamicamente */
+  background: linear-gradient(180deg, #121d46, #0b1020);
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 2px dashed #24316b;
+}
+
+.hero-real span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffe082;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
