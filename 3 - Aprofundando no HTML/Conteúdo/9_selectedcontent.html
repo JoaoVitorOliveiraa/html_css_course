@@ -1,11 +1,247 @@
-<!--Tópico: SelectedContent-->
+<!--Tópico: O Elemento <selectedcontent>-->
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SelectedContent</title>
+    <title>O Elemento &lt;selectedcontent&gt;</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="9_selectedcontent.css" />
   </head>
-  <body></body>
+
+  <body>
+    <main class="wrap">
+      <!-- ===== CABEÇALHO ===== -->
+      <span class="pill">HTML • <code>&lt;selectedcontent&gt;</code></span>
+
+      <h1>
+        O Novo Elemento HTML <code>&lt;selectedcontent&gt;</code> Vai Mudar Seus
+        Selects
+      </h1>
+
+      <p class="sub">
+        A ideia é simples: vincular um seletor a uma área que mostra o conteúdo
+        da opção escolhida. Em vez de exibir apenas texto simples, você pode
+        renderizar HTML rico dentro do próprio <code>&lt;select&gt;</code>.
+      </p>
+
+      <!-- ===== SEÇÃO 1: O PROBLEMA ===== -->
+      <section class="section">
+        <h2>1. O problema dos selects tradicionais</h2>
+        <p class="sub">
+          Até recentemente, os elementos <code>&lt;select&gt;</code> só
+          conseguiam exibir texto simples como rótulo da opção selecionada.
+          Qualquer tentativa de usar HTML dentro de um
+          <code>&lt;option&gt;</code> era ignorada ou achatada em texto puro.
+        </p>
+
+        <div class="card">
+          <h3>Select tradicional (sem &lt;selectedcontent&gt;)</h3>
+          <div class="field">
+            <label for="tradicional">Plano</label>
+            <select id="tradicional" class="select-tradicional">
+              <option value="starter">S • Starter • Ideal para testes</option>
+              <option value="pro" selected>P • Pro • Projetos sérios</option>
+              <option value="business">B • Business • Times e empresas</option>
+              <option value="enterprise">E • Enterprise • Escala máxima</option>
+            </select>
+          </div>
+          <p class="note">
+            Perceba que o texto precisa ser "achatado" em uma única linha. Não
+            há como destacar visualmente o badge, o nome e a descrição.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 2: A SOLUÇÃO ===== -->
+      <section class="section">
+        <h2>2. A solução com &lt;selectedcontent&gt;</h2>
+        <p class="sub">
+          O elemento <code>&lt;selectedcontent&gt;</code> é colocado dentro de
+          um <code>&lt;button&gt;</code> (que, por sua vez, fica dentro do
+          <code>&lt;select&gt;</code>). Ele serve como um "slot" que espelha o
+          conteúdo HTML da opção atualmente selecionada.
+        </p>
+
+        <div class="card">
+          <h3>Select moderno (com &lt;selectedcontent&gt;)</h3>
+
+          <form class="form" autocomplete="off">
+            <div class="field">
+              <label for="plan">Plano</label>
+
+              <select id="plan">
+                <button>
+                  <selectedcontent></selectedcontent>
+                </button>
+
+                <option value="starter">
+                  <span class="row">
+                    <span class="badge b1">S</span>
+                    <strong>Starter</strong>
+                    <span>• Ideal para testes</span>
+                  </span>
+                </option>
+
+                <option value="pro" selected>
+                  <span class="row">
+                    <span class="badge b2">P</span>
+                    <strong>Pro</strong>
+                    <span>• Projetos sérios</span>
+                  </span>
+                </option>
+
+                <option value="business">
+                  <span class="row">
+                    <span class="badge b3">B</span>
+                    <strong>Business</strong>
+                    <span>• Times e empresas</span>
+                  </span>
+                </option>
+
+                <option value="enterprise">
+                  <span class="row">
+                    <span class="badge b4">E</span>
+                    <strong>Enterprise</strong>
+                    <span>• Escala máxima</span>
+                  </span>
+                </option>
+              </select>
+            </div>
+          </form>
+
+          <p class="note">
+            Agora o select exibe o badge colorido, o nome em negrito e a
+            descrição — tudo formatado com HTML e CSS reais.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 3: ESTRUTURA ===== -->
+      <section class="section">
+        <h2>3. Estrutura necessária</h2>
+        <p class="sub">
+          Para que o <code>&lt;selectedcontent&gt;</code> funcione, alguns
+          requisitos precisam ser atendidos:
+        </p>
+
+        <div class="card">
+          <ol class="lista-estrutura">
+            <li>
+              O <code>&lt;select&gt;</code> deve ter
+              <code>appearance: base-select</code> (via CSS) para habilitar o
+              novo comportamento.
+            </li>
+            <li>
+              O primeiro filho do <code>&lt;select&gt;</code> deve ser um
+              <code>&lt;button&gt;</code> contendo o
+              <code>&lt;selectedcontent&gt;</code>.
+            </li>
+            <li>
+              As <code>&lt;option&gt;</code> podem conter HTML rico (spans,
+              strong, etc.) que será espelhado pelo
+              <code>&lt;selectedcontent&gt;</code>.
+            </li>
+            <li>
+              O seletor <code>::picker(select)</code> também recebe
+              <code>appearance: base-select</code> para estilizar a lista
+              suspensa.
+            </li>
+          </ol>
+
+          <pre class="code-block"><code>&lt;select id="plan"&gt;
+  &lt;button&gt;
+    &lt;selectedcontent&gt;&lt;/selectedcontent&gt;
+  &lt;/button&gt;
+  &lt;option value="pro" selected&gt;
+    &lt;span class="row"&gt;
+      &lt;span class="badge b2"&gt;P&lt;/span&gt;
+      &lt;strong&gt;Pro&lt;/strong&gt;
+      &lt;span&gt;• Projetos sérios&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/option&gt;
+&lt;/select&gt;</code></pre>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 4: ESTILIZAÇÃO ===== -->
+      <section class="section">
+        <h2>4. Estilização</h2>
+        <p class="sub">
+          O <code>&lt;selectedcontent&gt;</code> pode ser estilizado como
+          qualquer outro elemento. No exemplo abaixo, ele recebe um fundo
+          escuro, borda e padding para se destacar dentro do select.
+        </p>
+
+        <div class="card">
+          <pre class="code-block"><code>select,
+::picker(select) {
+  appearance: base-select;
+}
+
+option {
+  padding: 5px;
+}
+
+option::checkmark {
+  display: none;
+}
+
+option:checked {
+  background-color: #ffd166;
+}
+
+selectedcontent {
+  display: grid;
+  gap: 6px;
+  background: #0a1433;
+  border: 1px solid #22306a;
+  border-radius: 12px;
+  padding: 14px;
+  min-height: 56px;
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 5: SUPORTE ===== -->
+      <section class="section">
+        <h2>5. Suporte e considerações</h2>
+        <div class="card">
+          <ul class="lista-suporte">
+            <li>
+              <strong>Navegadores:</strong> atualmente suportado no Chrome 135+
+              e Edge 135+. O Firefox ainda não implementou.
+            </li>
+            <li>
+              <strong>Fallback:</strong> em navegadores sem suporte, o
+              <code>&lt;selectedcontent&gt;</code> é ignorado e o select se
+              comporta como o tradicional.
+            </li>
+            <li>
+              <strong>Acessibilidade:</strong> o conteúdo espelhado mantém a
+              semântica original da opção selecionada.
+            </li>
+            <li>
+              <strong>Flexibilidade:</strong> como o conteúdo é HTML real, você
+              pode usar imagens, ícones SVG, badges coloridos, etc.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== RODAPÉ ===== -->
+      <footer class="footer">
+        <p>
+          Material explicativo sobre o elemento
+          <code>&lt;selectedcontent&gt;</code> — parte do estudo de HTML e CSS
+          modernos.
+        </p>
+      </footer>
+    </main>
+  </body>
 </html>
