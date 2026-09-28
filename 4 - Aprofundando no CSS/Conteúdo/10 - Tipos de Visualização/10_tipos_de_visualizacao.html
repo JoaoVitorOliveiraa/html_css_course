@@ -1,0 +1,177 @@
+<!--Tópico: Tipos de Visualização (display)-->
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tipos_de_visualizacao.css" />
+    <title>Tipos de Visualização</title>
+  </head>
+  <body>
+    <div>
+      <h1>Tipos de Visualização</h1>
+      <hr />
+
+      <!-- ===== INTRODUÇÃO ===== -->
+      <h2>O que é a propriedade <code>display</code>?</h2>
+      <p class="texto">
+        A propriedade <code>display</code> define <b>como</b> um elemento HTML
+        será exibido na página. Cada valor altera o comportamento do elemento em
+        relação ao fluxo do documento, ao box model e à quebra de linhas.
+      </p>
+
+      <p class="texto">
+        Os valores mais comuns são: <code>block</code>, <code>inline</code>,
+        <code>inline-block</code> e <code>none</code>.
+      </p>
+
+      <hr />
+
+      <!-- ===== BLOCK ===== -->
+      <h2>1. <code>display: block</code></h2>
+      <p class="texto">
+        O elemento ocupa <b>toda a largura disponível</b> e sempre
+        <b>quebra linha</b>. O box model (largura, altura, padding, margin e
+        border) se aplica completamente.
+      </p>
+
+      <div class="exemplo">
+        <div class="caixa block">Bloco 1</div>
+        <div class="caixa block">Bloco 2</div>
+      </div>
+
+      <p class="texto">
+        Repare que cada bloco fica em sua própria linha, mesmo que haja espaço
+        ao lado.
+      </p>
+
+      <hr />
+
+      <!-- ===== INLINE ===== -->
+      <h2>2. <code>display: inline</code></h2>
+      <p class="texto">
+        O elemento ocupa <b>apenas o espaço do conteúdo</b> e
+        <b>não quebra linha</b>. O box model não se aplica verticalmente, e
+        <code>padding</code>/<code>margin</code> só funcionam na horizontal.
+      </p>
+
+      <div class="exemplo">
+        <span class="caixa inline">Inline 1</span>
+        <span class="caixa inline">Inline 2</span>
+        <span class="caixa inline">Inline 3</span>
+      </div>
+
+      <p class="texto">
+        Os elementos ficam lado a lado, mas altura e margin vertical são
+        ignoradas.
+      </p>
+
+      <hr />
+
+      <!-- ===== INLINE-BLOCK ===== -->
+      <h2>3. <code>display: inline-block</code></h2>
+      <p class="texto">
+        O melhor dos dois mundos: o elemento fica <b>lado a lado</b> com outros
+        (como <code>inline</code>), mas o
+        <b>box model se aplica</b> completamente (como <code>block</code>).
+      </p>
+
+      <div class="exemplo">
+        <a href="#" class="caixa inline-block">Botão 1</a>
+        <a href="#" class="caixa inline-block">Botão 2</a>
+        <a href="#" class="caixa inline-block">Botão 3</a>
+      </div>
+
+      <p class="texto">
+        Cada botão tem altura, padding e margin aplicados, mas continuam lado a
+        lado.
+      </p>
+
+      <hr />
+
+      <!-- ===== NONE ===== -->
+      <h2>4. <code>display: none</code></h2>
+      <p class="texto">
+        O elemento <b>desaparece completamente</b> da tela e do fluxo do
+        documento — como se não existisse no HTML.
+      </p>
+
+      <div class="exemplo">
+        <p class="texto">
+          Este texto contém uma palavra
+          <span class="caixa none">INVISÍVEL</span>
+          que foi escondida com <code>display: none</code>.
+        </p>
+      </div>
+
+      <p class="texto">
+        A palavra "INVISÍVEL" não aparece e não ocupa espaço algum.
+      </p>
+
+      <hr />
+
+      <!-- ===== TABELA RESUMO ===== -->
+      <h2>Resumo comparativo</h2>
+
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Valor</th>
+            <th>Quebra linha?</th>
+            <th>Box model?</th>
+            <th>Largura</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>block</code></td>
+            <td>Sim</td>
+            <td>Completo</td>
+            <td>Toda disponível</td>
+          </tr>
+          <tr>
+            <td><code>inline</code></td>
+            <td>Não</td>
+            <td>Só horizontal</td>
+            <td>Do conteúdo</td>
+          </tr>
+          <tr>
+            <td><code>inline-block</code></td>
+            <td>Não</td>
+            <td>Completo</td>
+            <td>Do conteúdo</td>
+          </tr>
+          <tr>
+            <td><code>none</code></td>
+            <td>—</td>
+            <td>—</td>
+            <td>Não renderiza</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <!-- ===== DICA ===== -->
+      <h2>
+        Dica: <code>display: none</code> vs <code>visibility: hidden</code>
+      </h2>
+      <p class="texto">
+        <code>display: none</code> remove o elemento <b>completamente</b> do
+        fluxo. Já <code>visibility: hidden</code> apenas o deixa
+        <b>invisível</b>, mas ele <b>continua ocupando espaço</b> na página.
+      </p>
+
+      <div class="exemplo">
+        <div class="caixa block">Visível</div>
+        <div class="caixa block invisivel">visibility: hidden</div>
+        <div class="caixa block">Visível</div>
+      </div>
+
+      <p class="texto">
+        Repare que o bloco do meio não aparece, mas <b>ainda ocupa espaço</b>.
+      </p>
+    </div>
+  </body>
+</html>
