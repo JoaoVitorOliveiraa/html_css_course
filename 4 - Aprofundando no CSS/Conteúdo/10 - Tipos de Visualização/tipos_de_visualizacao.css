@@ -1,0 +1,182 @@
+/* Tópico: Tipos de Visualização (display) */
+/* Este arquivo explica e demonstra os principais valores */
+/* da propriedade display de forma simples e didática. */
+
+/* ===== RESET E BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px, facilita cálculos */
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #222;
+  background: #f7f7f7;
+  padding: 2rem;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color: #333;
+}
+
+h2 code,
+p code {
+  background: #e8e8e8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+  color: #c0392b;
+}
+
+p.texto {
+  margin-bottom: 1rem;
+  max-width: 70ch;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* ===== ÁREA DE EXEMPLO ===== */
+.exemplo {
+  background: #fff;
+  border: 1px dashed #bbb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* ===== CAIXAS GENÉRICAS ===== */
+.caixa {
+  background: #3498db;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ============================================
+   BLOCK
+   - Ocupa todo o espaço horizontal
+   - Quebra linhas
+   - Box model se aplica (largura, altura, padding, margin)
+   ============================================ */
+.block {
+  display: block;
+  margin-bottom: 0.5rem;
+  background: #3498db;
+}
+
+/* ============================================
+   INLINE
+   - Ocupa apenas o espaço do conteúdo
+   - Não quebra linha
+   - Box model NÃO se aplica verticalmente
+   - Padding e margin só funcionam na horizontal
+   ============================================ */
+.inline {
+  display: inline;
+  background: #e67e22;
+  padding: 0.5rem;
+  /* altura e margin vertical são ignoradas pelo navegador */
+}
+
+/* ============================================
+   INLINE-BLOCK
+   - Ocupa apenas o espaço do conteúdo
+   - Não quebra linha
+   - Box model se aplica completamente
+   - Padding e margin funcionam em todas as direções
+   ============================================ */
+.inline-block {
+  display: inline-block;
+  background: #27ae60;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem;
+  height: 5rem;
+  line-height: 3rem;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* ============================================
+   NONE
+   - Remove o elemento completamente da tela
+   - Não ocupa espaço no fluxo do documento
+   ============================================ */
+.none {
+  display: none;
+  background: #c0392b;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+/* ============================================
+   VISIBILITY: HIDDEN (para comparação)
+   - O elemento fica invisível
+   - MAS continua ocupando espaço na página
+   ============================================ */
+.invisivel {
+  visibility: hidden;
+}
+
+/* ===== TABELA RESUMO ===== */
+.tabela {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: #fff;
+  font-size: 1.5rem;
+}
+
+.tabela th,
+.tabela td {
+  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+.tabela th {
+  background: #f0f0f0;
+  font-weight: 700;
+}
+
+.tabela td code {
+  background: #e8e8e8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+  color: #c0392b;
+}
+
+.tabela tr:nth-child(even) {
+  background: #fafafa;
+}
