@@ -1,0 +1,243 @@
+<!--Tópico: Tipos de Posicionamento (position)-->
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipos de Posicionamento</title>
+    <link rel="stylesheet" href="tipos_de_posicionamento.css" />
+  </head>
+  <body>
+    <h1>Tipos de Posicionamento</h1>
+    <hr />
+
+    <!-- ===== INTRODUÇÃO ===== -->
+    <h2>O que é a propriedade <code>position</code>?</h2>
+    <p class="texto">
+      A propriedade <code>position</code> define <b>como</b> um elemento é
+      posicionado no fluxo do documento. Ela trabalha em conjunto com as
+      propriedades <code>top</code>, <code>right</code>, <code>bottom</code> e
+      <code>left</code> para deslocar o elemento.
+    </p>
+
+    <p class="texto">
+      Os valores mais comuns são: <code>static</code>, <code>relative</code>,
+      <code>absolute</code>, <code>fixed</code> e <code>sticky</code>.
+    </p>
+
+    <hr />
+
+    <!-- ===== STATIC ===== -->
+    <h2>1. <code>position: static</code></h2>
+    <p class="texto">
+      É o <b>valor padrão</b> de todos os elementos. O elemento segue o fluxo
+      normal do documento. As propriedades <code>top</code>, <code>right</code>,
+      <code>bottom</code> e <code>left</code> <b>não têm efeito</b>.
+    </p>
+
+    <div class="exemplo">
+      <p class="caixa static">Sou static (padrão)</p>
+      <p class="caixa static">Também sou static</p>
+      <p class="caixa static">
+        Mesmo se eu tivesse <code>top: 50px</code>, nada aconteceria
+      </p>
+    </div>
+
+    <p class="texto">
+      Cada parágrafo fica em sua própria linha, seguindo o fluxo normal. O
+      <code>top</code> e o <code>left</code> são simplesmente ignorados.
+    </p>
+
+    <hr />
+
+    <!-- ===== RELATIVE ===== -->
+    <h2>2. <code>position: relative</code></h2>
+    <p class="texto">
+      O elemento continua no fluxo normal, mas pode ser <b>deslocado</b> em
+      relação à sua posição original usando <code>top</code>,
+      <code>right</code>, <code>bottom</code> e <code>left</code>. O espaço
+      original dele é preservado.
+    </p>
+
+    <div class="exemplo">
+      <p class="caixa static">Sou static — fico no meu lugar</p>
+      <p class="caixa relative">
+        Sou relative — fui deslocado 20px para baixo e 40px para a direita
+      </p>
+      <p class="caixa static">Sou static — fico no meu lugar</p>
+    </div>
+
+    <p class="texto">
+      Repare que o elemento deslocado <b>não empurra</b> os outros — o espaço
+      original dele continua reservado (a "sombra" do lugar onde ele estava).
+    </p>
+
+    <hr />
+
+    <!-- ===== ABSOLUTE ===== -->
+    <h2>3. <code>position: absolute</code></h2>
+    <p class="texto">
+      O elemento é <b>removido do fluxo</b> do documento e posicionado em
+      relação ao
+      <b
+        >ancestral mais próximo que tenha <code>position</code> diferente de
+        <code>static</code></b
+      >. Se não houver nenhum, ele se posiciona em relação à página.
+    </p>
+
+    <div class="exemplo container-relative">
+      <p class="caixa static">Sou static</p>
+      <p class="caixa absolute">Sou absolute — preso no canto do container</p>
+      <p class="caixa static">Também sou static</p>
+    </div>
+
+    <p class="texto">
+      O elemento <code>absolute</code> saiu do fluxo: os outros parágrafos agem
+      como se ele não existisse. Ele está posicionado em relação ao container
+      que tem <code>position: relative</code>.
+    </p>
+
+    <hr />
+
+    <!-- ===== FIXED ===== -->
+    <h2>4. <code>position: fixed</code></h2>
+    <p class="texto">
+      O elemento é <b>removido do fluxo</b> e posicionado em relação à
+      <b>janela do navegador (viewport)</b>. Ele <b>não se move</b> quando a
+      página é rolada — fica "fixo" na tela.
+    </p>
+
+    <div class="exemplo">
+      <p class="texto">
+        Olhe no <b>canto inferior direito</b> da tela: há um botão fixo que não
+        sai do lugar, mesmo se você rolar a página.
+      </p>
+    </div>
+
+    <!-- Elemento fixo real: fica no canto da viewport -->
+    <button class="botao-fixo">Estou fixo!</button>
+
+    <hr />
+
+    <!-- ===== STICKY ===== -->
+    <h2>5. <code>position: sticky</code></h2>
+    <p class="texto">
+      O elemento se comporta como <code>relative</code> até que a página seja
+      rolada até um certo ponto. A partir daí, ele se comporta como
+      <code>fixed</code> — "gruda" na tela enquanto o container dele estiver
+      visível.
+    </p>
+
+    <div class="exemplo container-sticky">
+      <p class="texto">
+        Role a página devagar. Quando este título azul chegar ao topo, ele vai
+        <b>"grudar"</b> lá por um tempo.
+      </p>
+
+      <p class="caixa sticky">Sou sticky! Grudo no topo ao rolar</p>
+
+      <p class="texto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p class="texto">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat.
+      </p>
+      <p class="texto">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur.
+      </p>
+      <p class="texto">
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.
+      </p>
+      <p class="texto">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium.
+      </p>
+      <p class="texto">
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+        fugit, sed quia consequuntur magni dolores.
+      </p>
+      <p class="texto">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium voluptatum deleniti atque corrupti.
+      </p>
+      <p class="texto">
+        Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+        tempore, cum soluta nobis est eligendi optio cumque nihil impedit.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- ===== TABELA RESUMO ===== -->
+    <h2>Resumo comparativo</h2>
+
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Valor</th>
+          <th>Fica no fluxo?</th>
+          <th>Referência</th>
+          <th>Rola com a página?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>static</code></td>
+          <td>Sim</td>
+          <td>Fluxo normal</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td><code>relative</code></td>
+          <td>Sim</td>
+          <td>Posição original</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td><code>absolute</code></td>
+          <td>Não</td>
+          <td>Ancestral posicionado</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td><code>fixed</code></td>
+          <td>Não</td>
+          <td>Viewport (janela)</td>
+          <td>Não</td>
+        </tr>
+        <tr>
+          <td><code>sticky</code></td>
+          <td>Sim (até grudar)</td>
+          <td>Viewport + container</td>
+          <td>Até o limite</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <!-- ===== DICA ===== -->
+    <h2>Dica importante</h2>
+    <p class="texto">
+      Quando você usa <code>position: absolute</code>, o elemento se posiciona
+      em relação ao
+      <b
+        >ancestral mais próximo que tenha <code>position</code> diferente de
+        <code>static</code></b
+      >. Por isso, é comum colocar <code>position: relative</code> no elemento
+      pai para "prender" o filho absolute dentro dele.
+    </p>
+
+    <p class="texto">
+      Já o <code>position: sticky</code> precisa de um valor em
+      <code>top</code>, <code>right</code>, <code>bottom</code> ou
+      <code>left</code> para funcionar — sem isso, ele se comporta como
+      <code>relative</code>.
+    </p>
+  </body>
+</html>
