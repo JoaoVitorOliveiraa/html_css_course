@@ -1,0 +1,212 @@
+/* Tópico: Tipos de Posicionamento (position) */
+/* Este arquivo explica e demonstra os principais valores */
+/* da propriedade position de forma simples e didática. */
+
+/* ===== RESET E BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px, facilita cálculos */
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #222;
+  background: #f7f7f7;
+  padding: 2rem;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color: #333;
+}
+
+h2 code,
+p code {
+  background: #e8e8e8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+  color: #c0392b;
+}
+
+p.texto {
+  margin-bottom: 1rem;
+  max-width: 70ch;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* ===== ÁREA DE EXEMPLO ===== */
+.exemplo {
+  background: #fff;
+  border: 1px dashed #bbb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Container que serve de referência para o absolute */
+.container-relative {
+  position: relative; /* ESSENCIAL: prende o filho absolute */
+  min-height: 14rem;
+}
+
+/* Container para o exemplo do sticky */
+.container-sticky {
+  background: #fff;
+  border: 1px dashed #bbb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* ===== CAIXAS GENÉRICAS ===== */
+.caixa {
+  padding: 1rem;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+/* ============================================
+   STATIC (padrão)
+   - Segue o fluxo normal
+   - top/right/bottom/left NÃO têm efeito
+   ============================================ */
+.static {
+  position: static;
+  background: #3498db;
+}
+
+/* ============================================
+   RELATIVE
+   - Continua no fluxo normal
+   - Pode ser deslocado com top/right/bottom/left
+   - O espaço original é preservado
+   ============================================ */
+.relative {
+  position: relative;
+  top: 2rem; /* desloca 20px para baixo */
+  left: 4rem; /* desloca 40px para a direita */
+  background: #e67e22;
+}
+
+/* ============================================
+   ABSOLUTE
+   - Sai do fluxo do documento
+   - Posiciona em relação ao ancestral mais próximo
+     que tenha position diferente de static
+   ============================================ */
+.absolute {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #c0392b;
+  margin: 0;
+}
+
+/* ============================================
+   FIXED
+   - Sai do fluxo do documento
+   - Posiciona em relação à viewport (janela)
+   - Não rola junto com a página
+   ============================================ */
+.botao-fixo {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1.2rem 2rem;
+  background: #8e44ad;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+.botao-fixo:hover {
+  background: #7d3c98;
+}
+
+/* ============================================
+   STICKY
+   - Comporta-se como relative até atingir o limite
+   - Depois, comporta-se como fixed
+   - Precisa de top/right/bottom/left para funcionar
+   ============================================ */
+.sticky {
+  position: sticky;
+  top: 1rem; /* gruda 10px abaixo do topo */
+  background: #2980b9;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  margin: 1rem 0;
+  z-index: 10;
+}
+
+/* ===== TABELA RESUMO ===== */
+.tabela {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: #fff;
+  font-size: 1.5rem;
+}
+
+.tabela th,
+.tabela td {
+  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+.tabela th {
+  background: #f0f0f0;
+  font-weight: 700;
+}
+
+.tabela td code {
+  background: #e8e8e8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+  color: #c0392b;
+}
+
+.tabela tr:nth-child(even) {
+  background: #fafafa;
+}
