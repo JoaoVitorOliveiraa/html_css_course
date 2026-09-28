@@ -1,67 +1,142 @@
 /* Código CSS do Desafio 1 */
 
-/* A fonte de todos os textos da página deverá ser Montserrat e, caso o
- navegador não consiga carregar, deverá usar uma fonte sans-serif. */
-h1,
-h2,
-h3,
-li,
-a,
-figcaption,
-p {
-  font-family: "Montserrat", sans-serif;
+/* Iniciando com o seletor universal zerando o espaçamento interno,
+ o espaçamento externo e ajustando o Box Model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Vamos alterar o tamanho dos textos da página de acordo com a tabela:
-Elemento - Tamanho - Altura da Linha
-h1 - 45px - 1
-h2 - 32px - 1.1
-h3 - 24px - 1.2
-p - 18px - 1.4 */
-
-h1 {
-  font-size: 45px;
-  line-height: 1;
+/* Alterando o font size da raiz do site (root) para 10px ou o equivalente em % */
+/* Depois dessa alteração, vamos mudar TODAS as unidades do documento para rem. */
+html {
+  font-size: 62.5%;
 }
 
-h2 {
-  font-size: 32px;
-  line-height: 1.1;
-}
-
-h3 {
-  font-size: 24px;
-  line-height: 1.2;
-}
-
-p {
-  font-size: 18px;
+body {
+  font-family: "Monserrat", sans-serif;
+  color: #333;
+  font-size: 1.8rem;
   line-height: 1.4;
 }
 
-/* A legenda da imagem deverá ter 12px de tamanho e deverá estar em itálico. */
-figcaption {
-  font-size: 12px;
-  font-style: italic;
+/* -------------------------------------------------------------------------- */
+
+/* Adicione um espaçamento externo inferior seguindo a tabela abaixo:
+h1, figure  - 32px
+h2, a, ul - 24px
+h3 - 18px
+p, li - 6px */
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 1;
+  margin-bottom: 3.2rem;
 }
 
-/* O link de compra deverá estar na cor #c44105 com 
-24px de tamanho, negrito e com um sublinhado duplo. */
-a {
-  color: #c44105;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: double;
-  text-decoration-line: underline;
+h2 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  margin-bottom: 2.4rem;
 }
 
-/* Os itens de lista deverão estar na cor #035276 e em itálico. */
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 1.8rem;
+}
+
 li {
   color: #035276;
   font-style: italic;
+  margin-bottom: 0.6rem;
 }
 
-/* Vamos realçar o texto '75"' que está dentro do H1 com a cor #0588c4. */
+p {
+  margin-bottom: 0.6rem;
+}
+
+/* Se atente para o espaçamento externo inferior da âncora. Tente resolver o problema. */
+a:link,
+a:visited {
+  display: inline-block;
+  color: #c44105;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-decoration: double;
+  text-decoration-line: underline;
+  margin-bottom: 2.4rem;
+}
+
+/* A lista não ordenada deverá ter um espaçamento externo da esquerda de 24px */
+ul {
+  margin-left: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Lembre de usar aquela sigla de Pseudo Classes no único link da página. Quando alguém passar o mouse por cima do link, ele deverá ficar na cor #0588c4;
+*/
+a:hover,
+a:active {
+  color: #0588c4;
+}
+
+/* Usando um espaçamento interno de 24px nas três seções menores do site. */
+section {
+  padding: 2.4rem;
+}
+
+/* A primeira letra do título h1 deverá ter 64px de tamanho da fonte. Faça isso usando apenas o CSS. */
+h1::first-letter {
+  font-size: 6.4rem;
+}
+
+/* A legenda da figura da página deverá ter um espaçamento externo da esquerda de 32px. */
+figcaption {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-left: 3.2rem;
+}
+
+/* Os hrs da página não deverão aparecer na tela do navegador. Faça isso apenas com CSS. */
+hr {
+  display: none;
+}
+
+/* Agrupe os itens da seção de condições em um bloco. O bloco deverá ocupar 
+apenas o tamanho do seu conteúdo. Esse bloco deverá ter #035276 como cor 
+de fundo e #fff como cor da fonte. A sombra deverá ser preta com 15% de 
+transparência, raio de desfoque de 16px e raio de propagação de 4px, sem 
+nenhum deslocamento vertical ou horizontal. O espaçamento interno vertical
+ deverá ser de 24px e o horizontal de 32px. O arredondamento da borda 
+ deverá ser de 20px. */
+.div-condicoes {
+  display: inline-block;
+  background-color: #035276;
+  color: #fff;
+  box-shadow: 0rem 0rem 1.6rem 0.4rem rgba(0, 0, 0, 0.15);
+  padding: 2.4rem 3.2rem;
+  border-radius: 2rem;
+}
+
+/* Copiando o botão de WhatsApp que fica no canto inferior direito do site da Hashtag (www.hashtagtreinamentos.com). 
+  - Primeiro passo é acessar o site e copiar o link da imagem. 
+  - Segundo passo é adicionar essa imagem (junto com um link que leve para o site do WhatsApp Web - https://web.whatsapp.com) em nosso HTML. 
+  - O último passo é formatar essa imagem mexendo no posicionamento dela para que ela fique fixada na tela no canto superior direito afastada 
+    de 10px da lateral direita e da parte superior. O tamanho da imagem deve ser de 85px. */
+.logo-whatsapp {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 8.5rem;
+  height: 8.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+
 .realce-h1,
 .realce-preco,
 .realce-italico,
@@ -69,19 +144,22 @@ li {
   color: #0588c4;
 }
 
-/* Os dois realces que fizemos na seção de Preço deverão ter a cor #0588c4. 
-(Existem várias formas certas de fazer isso). 
-Você pode trocar os códigos em HTML, só lembre de não perder a parte semântica do que tínhamos construído. */
 .realce-preco {
   font-weight: 700;
 }
 
-/* Os dois realces da seção de Condições deverão estar na cor #0588c4 e o realce do frete grátis
- deverá adicionar um sublinhado também. Lembre de não perder a parte semântica do HTML aqui também.*/
 .realce-italico {
   font-style: italic;
 }
 
 .realce-frete {
   text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Tanto o realce itálico quanto o realce de underline, se estiverem dentro do bloco de condições, deverão estar na cor #78d4ff. */
+.div-condicoes .realce-italico,
+.div-condicoes .realce-frete {
+  color: #78d4ff;
 }
