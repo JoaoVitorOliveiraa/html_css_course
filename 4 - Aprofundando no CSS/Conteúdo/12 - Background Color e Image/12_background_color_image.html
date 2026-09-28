@@ -1,0 +1,272 @@
+<!--Tópico: Background Color e Image-->
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Color e Image</title>
+    <link rel="stylesheet" href="background_color_image.css" />
+  </head>
+  <body>
+    <h1>Background Color e Image</h1>
+    <hr />
+
+    <!-- ===== INTRODUÇÃO ===== -->
+    <h2>O que é a propriedade <code>background</code>?</h2>
+    <p class="texto">
+      A propriedade <code>background</code> é um atalho (<em>shorthand</em>) que
+      agrupa várias propriedades relacionadas ao fundo de um elemento:
+      <code>background-color</code>, <code>background-image</code>,
+      <code>background-position</code>, <code>background-size</code>,
+      <code>background-repeat</code>, entre outras.
+    </p>
+
+    <p class="texto">
+      Vamos ver cada uma delas separadamente, com exemplos práticos.
+    </p>
+
+    <hr />
+
+    <!-- ===== BACKGROUND-COLOR ===== -->
+    <h2>1. <code>background-color</code></h2>
+    <p class="texto">
+      Define a <b>cor de fundo</b> do elemento. Aceita qualquer formato de cor:
+      nome (<code>red</code>), hexadecimal (<code>#f1f1f1</code>),
+      <code>rgb()</code>, <code>hsl()</code>, etc.
+    </p>
+
+    <div class="exemplo bg-color">
+      <p>Este bloco tem <code>background-color: #f1f1f1</code>.</p>
+    </div>
+
+    <hr />
+
+    <!-- ===== BACKGROUND-IMAGE ===== -->
+    <h2>2. <code>background-image</code></h2>
+    <p class="texto">
+      Define uma ou mais <b>imagens de fundo</b> para o elemento. Pode ser uma
+      URL externa (<code>url()</code>) ou um gradiente
+      (<code>linear-gradient()</code>, <code>radial-gradient()</code>).
+    </p>
+
+    <div class="exemplo bg-image">
+      <p style="color: #fff; font-weight: 700">
+        Este bloco tem uma imagem de fundo via <code>url()</code>.
+      </p>
+    </div>
+
+    <div class="exemplo bg-gradient">
+      <p style="color: #fff; font-weight: 700">
+        Este bloco usa <code>linear-gradient()</code> como fundo.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- ===== BACKGROUND-POSITION ===== -->
+    <h2>3. <code>background-position</code></h2>
+    <p class="texto">
+      Define a <b>posição inicial</b> da imagem de fundo. Aceita dois valores:
+      um para o eixo X (horizontal) e um para o eixo Y (vertical). Pode ser em
+      <code>%</code>, <code>px</code> ou palavras-chave (<code>top</code>,
+      <code>center</code>, <code>bottom</code>, <code>left</code>,
+      <code>right</code>).
+    </p>
+
+    <div class="grid-posicoes">
+      <div class="exemplo bg-pos bg-pos-top-left">
+        <span>top left</span>
+      </div>
+      <div class="exemplo bg-pos bg-pos-top-center">
+        <span>top center</span>
+      </div>
+      <div class="exemplo bg-pos bg-pos-top-right">
+        <span>top right</span>
+      </div>
+      <div class="exemplo bg-pos bg-pos-center">
+        <span>center</span>
+      </div>
+      <div class="exemplo bg-pos bg-pos-bottom-left">
+        <span>bottom left</span>
+      </div>
+      <div class="exemplo bg-pos bg-pos-bottom-right">
+        <span>bottom right</span>
+      </div>
+    </div>
+
+    <p class="texto">
+      Cada bloco mostra a mesma imagem posicionada em um canto diferente.
+    </p>
+
+    <hr />
+
+    <!-- ===== BACKGROUND-SIZE ===== -->
+    <h2>4. <code>background-size</code></h2>
+    <p class="texto">
+      Define o <b>tamanho</b> da imagem de fundo. Os valores mais comuns são:
+    </p>
+
+    <ul class="lista">
+      <li><code>auto</code> — tamanho original da imagem (padrão).</li>
+      <li>
+        <code>contain</code> — redimensiona para que a imagem inteira caiba no
+        elemento, mantendo a proporção.
+      </li>
+      <li>
+        <code>cover</code> — redimensiona para cobrir todo o elemento, mesmo que
+        parte da imagem seja cortada.
+      </li>
+      <li><code>100px 50px</code> — largura e altura específicas.</li>
+    </ul>
+
+    <div class="grid-sizes">
+      <div class="exemplo bg-size bg-size-contain">
+        <span>contain</span>
+      </div>
+      <div class="exemplo bg-size bg-size-cover">
+        <span>cover</span>
+      </div>
+      <div class="exemplo bg-size bg-size-100">
+        <span>100% 100%</span>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ===== BACKGROUND-REPEAT ===== -->
+    <h2>5. <code>background-repeat</code></h2>
+    <p class="texto">
+      Define se a imagem de fundo deve ser <b>repetida</b> e em quais eixos:
+    </p>
+
+    <ul class="lista">
+      <li><code>repeat</code> — repete nos dois eixos (padrão).</li>
+      <li><code>no-repeat</code> — não repete.</li>
+      <li><code>repeat-x</code> — repete apenas na horizontal.</li>
+      <li><code>repeat-y</code> — repete apenas na vertical.</li>
+    </ul>
+
+    <div class="grid-repeats">
+      <div class="exemplo bg-repeat bg-repeat-no">
+        <span>no-repeat</span>
+      </div>
+      <div class="exemplo bg-repeat bg-repeat-x">
+        <span>repeat-x</span>
+      </div>
+      <div class="exemplo bg-repeat bg-repeat-y">
+        <span>repeat-y</span>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ===== MÚLTIPLAS IMAGENS ===== -->
+    <h2>6. Múltiplas imagens de fundo</h2>
+    <p class="texto">
+      É possível empilhar <b>várias imagens</b> em um mesmo elemento,
+      separando-as por vírgula. A primeira da lista fica <b>na frente</b>, e a
+      última fica <b>atrás</b>.
+    </p>
+
+    <div class="exemplo bg-multiplo">
+      <p style="color: #fff; font-weight: 700">
+        Este bloco tem duas imagens: um logo na frente e um banner atrás.
+      </p>
+    </div>
+
+    <p class="texto">
+      Repare que o logo aparece sobreposto ao banner de fundo.
+    </p>
+
+    <hr />
+
+    <!-- ===== GRADIENTES COM DIREÇÃO ===== -->
+    <h2>7. Gradientes com direção</h2>
+    <p class="texto">
+      O <code>linear-gradient()</code> aceita um ângulo em graus para definir a
+      direção:
+    </p>
+
+    <ul class="lista">
+      <li><code>0deg</code> — de baixo para cima</li>
+      <li><code>90deg</code> — da esquerda para a direita</li>
+      <li><code>180deg</code> — de cima para baixo</li>
+    </ul>
+
+    <div class="grid-gradientes">
+      <div class="exemplo grad-0"><span>0deg</span></div>
+      <div class="exemplo grad-90"><span>90deg</span></div>
+      <div class="exemplo grad-180"><span>180deg</span></div>
+    </div>
+
+    <hr />
+
+    <!-- ===== ATALHO BACKGROUND ===== -->
+    <h2>8. O atalho <code>background</code></h2>
+    <p class="texto">
+      Todas as propriedades acima podem ser escritas de uma vez usando o atalho
+      <code>background</code>. A ordem recomendada é:
+    </p>
+
+    <pre class="code-block"><code>background:
+  [background-color]
+  [background-image]
+  [background-position] / [background-size]
+  [background-repeat];</code></pre>
+
+    <p class="texto">Exemplo:</p>
+
+    <pre
+      class="code-block"
+    ><code>background: #f1f1f1 url('imagem.jpg') center / cover no-repeat;</code></pre>
+
+    <hr />
+
+    <!-- ===== TABELA RESUMO ===== -->
+    <h2>Resumo das propriedades</h2>
+
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Propriedade</th>
+          <th>O que faz</th>
+          <th>Valores comuns</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>background-color</code></td>
+          <td>Cor de fundo</td>
+          <td><code>#f1f1f1</code>, <code>red</code>, <code>rgb()</code></td>
+        </tr>
+        <tr>
+          <td><code>background-image</code></td>
+          <td>Imagem ou gradiente de fundo</td>
+          <td><code>url()</code>, <code>linear-gradient()</code></td>
+        </tr>
+        <tr>
+          <td><code>background-position</code></td>
+          <td>Posição da imagem</td>
+          <td>
+            <code>center</code>, <code>50% 0</code>, <code>top right</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>background-size</code></td>
+          <td>Tamanho da imagem</td>
+          <td>
+            <code>contain</code>, <code>cover</code>, <code>100px 50px</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>background-repeat</code></td>
+          <td>Repetição da imagem</td>
+          <td>
+            <code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
